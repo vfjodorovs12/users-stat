@@ -1,0 +1,22 @@
+{
+    "name": "vfjodorovs12/users-stat",
+    "description": "SEAT module: Fleet and user statistics",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vfjodorovs12\\UsersStat\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vfjodorovs12\\UsersStat\\UsersStatServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
