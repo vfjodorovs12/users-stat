@@ -5,11 +5,12 @@
     "license": "GPL-2.0-only",
     "authors": [
         {
-            "name": "ТВОЁ ИМЯ",
-            "email": "ТВОЙ EMAIL"
+            "name": "vfjodorovs12",
+            "email": "your@email.com"
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Vfjodorovs12\\Seat\\UsersStat\\": "src/"
