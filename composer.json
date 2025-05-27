@@ -1,31 +1,31 @@
 {
-    "name": "vfjodorovs12/users-stat",
-    "description": "User stats module for SEAT",
-    "type": "seat-plugin",
-    "license": "GPL-2.0-only",
-    "authors": [
-        {
-            "name": "vfjodorovs12",
-            "email": "your@email.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Vfjodorovs12\\Seat\\UsersStat\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Vfjodorovs12\\Seat\\UsersStat\\UsersStatServiceProvider"
-            ]
-        }
-    },
-    "require": {
-        "eveseat/services": "^5.0",
-        "eveseat/eveapi": "^5.0",
-        "eveseat/web": "^5.0"
+  "name": "vfjodorovs12/users-stat",
+  "description": "SEAT module: показывает всех пилотов корпорации и статистику посещения флотов",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "vfjodorovs12",
+      "email": "your@email.com"
     }
+  ],
+  "require": {
+    "eveseat/services": "^5.0",
+    "eveseat/eveapi": "^5.0",
+    "eveseat/web": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vfjodorovs12\\UsersStat\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vfjodorovs12\\UsersStat\\ServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
