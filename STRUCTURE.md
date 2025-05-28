@@ -1,22 +1,19 @@
 users-stat/
-├── composer.json
 ├── src/
-│   ├── ServiceProvider.php
+│   ├── Config/
+│   │   └── usersstat.sidebar.php           # Конфиг для отображения в сайдбаре SeAT
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── UsersStatController.php     # Контроллер модуля
 │   ├── Models/
-│   │   ├── Pilot.php
-│   │   └── FleetAttendance.php
-│   └── Http/
-│       └── Controllers/
-│           └── UsersStatController.php
-├── routes/
-│   └── web.php
-├── resources/
-│   └── views/
-│       └── index.blade.php
-├── config/
-│   └── menu.php
+│   │   ├── FleetAttendance.php             # Модель посещаемости флотов
+│   │   └── Pilot.php                       # Модель пилота
+│   └── ServiceProvider.php                 # Главный сервис-провайдер пакета
 ├── database/
-│   └── migrations/
-│       ├── 2025_05_26_000001_create_corporation_pilots_table.php
-│       └── 2025_05_26_000002_create_fleet_attendance_table.php
-└── vendor/
+│   └── migrations/                         # Миграции для БД
+├── resources/
+│   └── views/                              # Blade-шаблоны модуля
+├── routes/
+│   └── web.php                             # Роуты модуля
+├── composer.json
+├── README.md
