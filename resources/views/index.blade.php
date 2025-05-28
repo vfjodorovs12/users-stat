@@ -2,9 +2,7 @@
 
 @section('title', 'Статистика пилотов')
 @section('page_header', 'Статистика пилотов')
-@section('page_description')
-    Все пилоты корпорации<br>
-    и статистика посещения флотов
+@section('page_description') 
 @endsection
 
 @section('full')
