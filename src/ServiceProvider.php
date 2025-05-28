@@ -2,32 +2,39 @@
 
 namespace Vfjodorovs12\UsersStat;
 
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Seat\Services\AbstractSeatPlugin;
 
-class ServiceProvider extends BaseServiceProvider
+class ServiceProvider extends AbstractSeatPlugin
 {
     public function boot()
     {
-        // Подключение маршрутов, шаблонов и миграций
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'usersstat');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->add_routes();
+        $this->add_views();
+        $this->addMigrations();
+    }
 
-        // Регистрируем пункт меню в Eve Seat
-        $this->app->booted(function () {
-            if (app()->bound('seat.menu')) {
-                app('seat.menu')->add([
-                    'name' => 'Статистика пилотов',
-                    'icon' => 'fa fa-users',
-                    'route' => 'usersstat.index', // Имя вашего маршрута в routes/web.php
-                    'permission' => null, // Можно указать нужные права доступа или оставить null
-                ]);
-            }
-        });
+    public function add_routes()
+    {
+        if (! $this->app->routesAreCached()) {
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        }
+    }
+
+    public function add_views()
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'usersstat');
+    }
+
+    private function addMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations/');
     }
 
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . '/Config/usersstat.sidebar.php',
+            'package.sidebar'
+        );
     }
 }
