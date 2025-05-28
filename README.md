@@ -1,21 +1,42 @@
-Module Name: Users Stat
+# Users Stat
 
-Description:
-The Users Stat module is a plugin for the SeAT platform, designed to provide extended statistical insights and reporting features for user activity. This module integrates seamlessly with SeAT, adding custom routes, views, and database migrations to enable advanced user data analysis. It is fully configurable and supports integration into the SeAT sidebar for easy navigation.
+Users Stat is a plugin module for the SeAT platform that provides extended statistical insights and reporting features for user activity. The module integrates with SeAT, adding custom routes, views, and database migrations to enable advanced user data analysis and visualization.
 
-Key Features:
+## Features
 
-Registers custom routes for module-specific functionality
-Loads dedicated views under the usersstat namespace
-Applies necessary database migrations for data storage
-Integrates configuration options for sidebar navigation
-Provides essential metadata for package management and repository linking
-Repository:
-https://github.com/vfjodorovs12/users-stat
+- Registers custom routes for module-specific functionality
+- Loads dedicated views under the `usersstat` namespace
+- Applies necessary database migrations for user statistics storage
+- Integrates configuration options for sidebar navigation in SeAT
+- Provides essential metadata for package management and repository linking
 
-Packagist:
-Vendor: vfjodorovs12
-Package: users-stat
+## Installation
 
-Intended Use:
-Ideal for administrators who need detailed statistics and tracking of user actions within SeAT, enhancing visibility and reporting capabilities.
+1. **Require the package via Composer**:
+
+   ```bash
+   composer require vfjodorovs12/users-stat
+   ```
+
+2. **Publish configuration, views, and migrations (if required):**
+
+   ```bash
+   php artisan vendor:publish --provider="Vfjodorovs12\UsersStat\ServiceProvider"
+   ```
+
+3. **Run the migrations:**
+
+   ```bash
+   php artisan migrate
+   ```
+
+4. **Configure the module in SeAT as needed.**
+
+## Repository
+
+- **GitHub:** [https://github.com/vfjodorovs12/users-stat](https://github.com/vfjodorovs12/users-stat)
+- **Packagist:** [vfjodorovs12/users-stat](https://packagist.org/packages/vfjodorovs12/users-stat)
+
+## License
+
+This project is open-sourced software licensed under the MIT license.
