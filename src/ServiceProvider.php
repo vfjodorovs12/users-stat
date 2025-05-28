@@ -37,4 +37,25 @@ class ServiceProvider extends AbstractSeatPlugin
             'package.sidebar'
         );
     }
+
+    // ОБЯЗАТЕЛЬНЫЕ МЕТОДЫ:
+    public function getName(): string
+    {
+        return 'Users Stat';
+    }
+
+    public function getPackageRepositoryUrl(): string
+    {
+        return 'https://github.com/vfjodorovs12/users-stat';
+    }
+
+    public function getPackagistPackageName(): string
+    {
+        return 'users-stat';
+    }
+
+    public function getPackagistVendorName(): string
+    {
+        return 'vfjodorovs12';
+    }
 }
